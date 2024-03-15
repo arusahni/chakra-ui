@@ -1,5 +1,13 @@
 # @chakra-ui/storybook-addon
 
+## 5.1.1
+
+### Patch Changes
+
+- [`5ec0be6`](https://github.com/chakra-ui/chakra-ui/commit/5ec0be610b5a69afba01a9c22365155c1b519136)
+  Thanks [@segunadebayo](https://github.com/segunadebayo)! - Fix issue in
+  storybook addon where theme could be undefined.
+
 ## 5.1.0
 
 ### Minor Changes

@@ -1,5 +1,74 @@
 # Change Log
 
+## 2.10.0
+
+### Minor Changes
+
+- [#8218](https://github.com/chakra-ui/chakra-ui/pull/8218)
+  [`a89c598`](https://github.com/chakra-ui/chakra-ui/commit/a89c598ed822bf11efc519f8789fa7c145e3bba0)
+  Thanks [@segunadebayo](https://github.com/segunadebayo)! - Add support for
+  custom theme conditions or pseudo props via `theme.conditions`
+
+  ```ts
+  // theme.ts
+
+  const theme = extendTheme({
+    conditions: {
+      _closed: "[data-state='closed']", // pseudo prop
+    },
+  })
+  ```
+
+  This allows you to use the pseudo prop in your components
+
+  ```jsx
+  <Box data-state="closed" _closed={{ bg: "red.200" }}>
+    This box is closed
+  </Box>
+  ```
+
+  **For TypeScript users**, you need to use the Chakra CLI to generate the types
+  for your custom conditions.
+
+  ```sh
+  pnpm chakra-cli tokens src/theme/index.ts
+  ```
+
+- [#8303](https://github.com/chakra-ui/chakra-ui/pull/8303)
+  [`2ac836e`](https://github.com/chakra-ui/chakra-ui/commit/2ac836ebce407990371e54bc16d379e704648935)
+  Thanks [@segunadebayo](https://github.com/segunadebayo)! - Add component
+  namespace to reduce imports and provide better composition
+
+- [#8218](https://github.com/chakra-ui/chakra-ui/pull/8218)
+  [`a89c598`](https://github.com/chakra-ui/chakra-ui/commit/a89c598ed822bf11efc519f8789fa7c145e3bba0)
+  Thanks [@segunadebayo](https://github.com/segunadebayo)! - Add support for
+  `_open` and `_closed` pseudo props for styling their respective selectors.
+
+  - `_open`: `&[data-state=open], &[open]`
+  - `_closed`: `&[data-state=closed]`
+  - `_groupOpen`: `[data-group][data-state=open] &`
+  - `_groupClosed`: `[data-group][data-state=closed] &`
+
+  Extend the existing pseudo props to support new selectors`
+
+  - `_placeholder` now supports `&[data-placeholder]`
+  - `_placeholderShow` now supports `&[data-placeholder-shown]`
+  - `_fullscreen` now supports `&[data-fullscreen]`
+  - `_empty` now supports `&[data-empty]`
+  - `_expanded` now supports `&[data-state=expanded]`
+  - `_checked` now supports `&[data-state-checked]`
+
+### Patch Changes
+
+- [#8212](https://github.com/chakra-ui/chakra-ui/pull/8212)
+  [`52d5f3c`](https://github.com/chakra-ui/chakra-ui/commit/52d5f3ccb5732b3ba84cdc04c3258c49c38c64a9)
+  Thanks [@jeferson-sb](https://github.com/jeferson-sb)! - add CSS accent-color
+  property to styled-system
+
+- Updated dependencies
+  [[`2ac836e`](https://github.com/chakra-ui/chakra-ui/commit/2ac836ebce407990371e54bc16d379e704648935)]:
+  - @chakra-ui/utils@2.1.0
+
 ## 2.9.2
 
 ### Patch Changes
